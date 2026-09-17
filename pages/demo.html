@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多模态 Demo 测试页</title>
+<style>
+  body { font-family: 'Microsoft YaHei', sans-serif; margin: 40px; background: #f5f7fa; color: #1f2d3d; }
+  .card { max-width: 420px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  .sub { color: #8492a6; font-size: 13px; margin-bottom: 24px; }
+  label { display: block; font-size: 14px; margin: 14px 0 6px; color: #475669; }
+  input { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #c0ccda; border-radius: 6px; font-size: 14px; }
+  input:focus { outline: 2px solid #409eff; border-color: #409eff; }
+  button { width: 100%; margin-top: 22px; padding: 12px; background: #409eff; color: #fff; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; }
+  button:hover { background: #337ecc; }
+  #status { margin-top: 20px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+  #status.ok { display: block; background: #f0f9eb; color: #529b2e; border: 1px solid #c2e7b0; }
+  #status.err { display: block; background: #fef0f0; color: #f56c6c; border: 1px solid #fbc4c4; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>多模态 Agent Demo</h1>
+  <div class="sub">这是给“眼睛（多模态 API）+ 大脑（DeepSeek）+ 手（Playwright）”演示用的本地测试页</div>
+  <label for="username">用户名</label>
+  <input id="username" type="text" placeholder="请输入用户名">
+  <label for="password">密码</label>
+  <input id="password" type="password" placeholder="请输入密码">
+  <button id="loginBtn">登录</button>
+  <div id="status"></div>
+</div>
+<script>
+  document.getElementById('loginBtn').addEventListener('click', function () {
+    const u = document.getElementById('username').value.trim();
+    const p = document.getElementById('password').value.trim();
+    const s = document.getElementById('status');
+    if (!u || !p) { s.className = 'err'; s.textContent = '错误：请填写用户名和密码'; return; }
+    s.className = 'ok';
+    s.textContent = '欢迎，' + u + '！登录成功。';
+  });
+</script>
+</body>
+</html>
