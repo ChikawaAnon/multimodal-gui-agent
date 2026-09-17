@@ -1,4 +1,4 @@
-﻿# Project-002-multimodal-agent
+# Multimodal GUI Agent
 
 多模态 GUI Agent 本地项目：**DeepSeek 大脑 + 现成多模态 API 眼睛 + 手（Playwright 网页 / UIAutomation 桌面）**，可完成本地页面、**真实网页任务**与**桌面应用控制**。
 
