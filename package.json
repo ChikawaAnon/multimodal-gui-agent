@@ -1,0 +1,27 @@
+{
+  "name": "multimodal-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "完整本地项目：DeepSeek 大脑 + 现成多模态 API 眼睛 + Playwright 手，支持本地页与真实网页任务",
+  "main": "src/run.js",
+  "scripts": {
+    "start": "node src/run.js local-login",
+    "task:local": "node src/run.js local-login",
+    "task:sauce": "node src/run.js saucedemo-login",
+    "task:example": "node src/run.js example",
+    "self-test": "node test/offline.test.js",
+    "setup": "powershell -ExecutionPolicy Bypass -File scripts/setup.ps1",
+    "task:desktop": "node src/run.js desktop:demoapp",
+    "cost-test": "node test/cost.test.js",
+    "demo:cost": "node scripts/demo-cost.js",
+    "demo:cache": "node scripts/demo-cache.js",
+    "demo:roi": "node scripts/demo-roi-agent.js",
+    "queue": "node src/run-queue.js",
+    "queue:demo": "node src/run-queue.js data/tasks/queue.example.json",
+    "schedule:preview": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/schedule.ps1 -DryRun"
+  },
+  "dependencies": {
+    "playwright-core": "^1.62.1",
+    "pngjs": "^7.0.0"
+  }
+}
